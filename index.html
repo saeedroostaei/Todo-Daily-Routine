@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO LIST | کارهای روزمره</title>
+    <link rel="stylesheet" href="./styls.css" />
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="app-container">
+      <header class="header">
+        <div class="title">
+          <h1 class="main-title">TODO DONE</h1>
+          <p class="subtitle">Keep it up</p>
+        </div>
+        <button id="theme-toggle" class="theme-btn" title="تغییر تم">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+            />
+          </svg>
+        </button>
+        <div class="number" id="progress-circle">
+          <span id="progress-text">0/0</span>
+        </div>
+      </header>
+
+      <main class="section">
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">همه</button>
+          <button class="filter-btn" data-filter="active">در حال انجام</button>
+          <button class="filter-btn" data-filter="completed">انجام شده</button>
+        </div>
+
+        <div class="input-box">
+          <input
+            class="input-text"
+            id="task-input"
+            type="text"
+            placeholder="کار جدیدت چیه؟"
+            autocomplete="off"
+          />
+          <input
+            class="input-time"
+            id="task-time"
+            type="time"
+            title="تنظیم ساعت هشدار"
+          />
+          <select class="input-priority" id="task-priority">
+            <option value="normal">معمولی</option>
+            <option value="high">بالا</option>
+            <option value="medium">متوسط</option>
+            <option value="low">پایین</option>
+          </select>
+          <button
+            class="input_icon"
+            id="add-btn"
+            type="button"
+            aria-label="Add Task"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 4.5v15m7.5-7.5h-15"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div class="task-container">
+          <ul class="task" id="task-list"></ul>
+          <button class="clear-all-btn" id="clear-all-btn">پاک کردن همه</button>
+        </div>
+      </main>
+    </div>
+
+    <div class="modal-overlay" id="edit-modal">
+      <div class="modal-content">
+        <h2>ویرایش کار</h2>
+        <input type="text" id="edit-input" class="input-text" />
+        <div class="modal-buttons">
+          <button id="save-edit-btn" class="btn-primary">ذخیره</button>
+          <button id="cancel-edit-btn" class="btn-secondary">انصراف</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
